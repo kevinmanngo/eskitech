@@ -1,4 +1,4 @@
-global using eskitech.Models;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,19 +11,24 @@ namespace eskitech.Controllers
     [Route("api/[controller]")]
     public class ProdukterController : ControllerBase
     {
-        private static List<Produkter> produkters = new List<Produkter>{
-            new Produkter(),
-            new Produkter {produktID = 1, Namn = "Stav"}
-        };
+
+        private readonly IProduktService _produktService;
+
+        public ProdukterController(IProduktService produktService)
+        {
+            _produktService = produktService;
+        }
+
+
         [HttpGet("GetAll")]
         public ActionResult<List<Produkter>> Get()
         {
-            return Ok(produkters);
+            return Ok(_produktService.GetAllProdukters());
         }
         [HttpGet("{produktID}")]
         public ActionResult<List<Produkter>> GetSingle(int produktID)
         {
-            return Ok(produkters.FirstOrDefault(p => p.produktID == produktID));
+            return Ok(_produktService.GetProduktersByID(produktID));
         }
     }
 }
