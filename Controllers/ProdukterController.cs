@@ -11,11 +11,19 @@ namespace eskitech.Controllers
     [Route("api/[controller]")]
     public class ProdukterController : ControllerBase
     {
-        private static Produkter TwintipSkidor = new Produkter();
-
-        public IActionResult Get()
+        private static List<Produkter> produkters = new List<Produkter>{
+            new Produkter(),
+            new Produkter {produktID = 1, Namn = "Stav"}
+        };
+        [HttpGet("GetAll")]
+        public ActionResult<List<Produkter>> Get()
         {
-            return Ok(TwintipSkidor);
+            return Ok(produkters);
+        }
+        [HttpGet("{produktID}")]
+        public ActionResult<List<Produkter>> GetSingle(int produktID)
+        {
+            return Ok(produkters.FirstOrDefault(p => p.produktID == produktID));
         }
     }
 }

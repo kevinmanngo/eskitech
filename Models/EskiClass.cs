@@ -1,5 +1,8 @@
+using System.Text.Json.Serialization;
+
 namespace eskitech.Models
 {
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum EskiClass
     {
         TwintipSkidor = 1,

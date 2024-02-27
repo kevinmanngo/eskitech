@@ -7,7 +7,7 @@ namespace eskitech.Models
 {
     public class Produkter
     {
-        public int produktID { get; set; }
+        public int produktID { get; set; } = 0;
         public string Namn { get; set; } = "Namn";
         public string kategori { get; set; } = "Kategori";
         public string storlek { get; set; } = "Storlek";
