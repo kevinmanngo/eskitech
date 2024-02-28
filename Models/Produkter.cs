@@ -7,14 +7,13 @@ namespace eskitech.Models
 {
     public class Produkter
     {
-        public int produktID { get; set; } = 0;
+        public int ProduktID { get; set; } = 0;
         public string Namn { get; set; } = "Namn";
-        public string kategori { get; set; } = "Kategori";
-        public string storlek { get; set; } = "Storlek";
-        public int lagerSaldo { get; set; }
-        public int pris { get; set; }
+        public string Storlek { get; set; } = "Storlek";
+        public int LagerSaldo { get; set; } = 0;
+        public int Pris { get; set; } = 0;
 
-        public EskiClass Class { get; set; } = EskiClass.TwintipSkidor;
+        public EskiClass Kategori { get; set; } = EskiClass.ValjKategori;
 
 
     }

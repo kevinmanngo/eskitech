@@ -9,7 +9,7 @@ namespace eskitech.Models.Services.ProduktService
     {
         private static List<Produkter> produkters = new List<Produkter>{
             new Produkter(),
-            new Produkter {produktID = 1, Namn = "Stav"}
+            new Produkter {ProduktID = 1, Namn = "Stav X2000", Kategori = EskiClass.Stavar, LagerSaldo = 50, Pris = 999, Storlek = "Barn 9-12"}
         };
         public List<Produkter> GetAllProdukters()
         {
@@ -18,7 +18,7 @@ namespace eskitech.Models.Services.ProduktService
 
         public Produkter GetProduktersByID(int produktID)
         {
-            var produkter = produkters.FirstOrDefault(p => p.produktID == produktID);
+            var produkter = produkters.FirstOrDefault(p => p.ProduktID == produktID);
             if (produkter is not null)
             return produkter;
 
