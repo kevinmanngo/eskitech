@@ -8,10 +8,11 @@ namespace eskitech.Data
 {
     public class DataContext : DbContext
     {
+        public DbSet<Produkter> Produkter => Set<Produkter>();
         public DataContext(DbContextOptions<DataContext> options) :base(options)
         {
             
         }
-        public DbSet<Produkter> Produkter => Set<Produkter>();
+        
     }
 }
