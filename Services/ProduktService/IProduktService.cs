@@ -7,8 +7,8 @@ namespace eskitech.Models.Services.ProduktService
 {
     public interface IProduktService
     {
-        List<Produkter> GetAllProdukters();
-        Produkter GetProduktersByID (int produktID);
+        Task<ServiceResponse<List<Produkter>>> GetAllProdukters();
+        Task<ServiceResponse<Produkter>> GetProduktersByID (int produktID);
         
     }
 }

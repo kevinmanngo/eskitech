@@ -11,18 +11,19 @@ namespace eskitech.Models.Services.ProduktService
             new Produkter(),
             new Produkter {ProduktID = 1, Namn = "Stav X2000", Kategori = EskiClass.Stavar, LagerSaldo = 50, Pris = 999, Storlek = "Barn 9-12"}
         };
-        public List<Produkter> GetAllProdukters()
+        public async Task<ServiceResponse<List<Produkter>>> GetAllProdukters()
         {
-            return produkters;
+            var serviceResponse = new ServiceResponse<List<Produkter>>();
+            serviceResponse.Data = produkters;
+            return serviceResponse;
         }
 
-        public Produkter GetProduktersByID(int produktID)
+        public async Task<ServiceResponse<Produkter>> GetProduktersByID(int produktID)
         {
+            var serviceResponse = new ServiceResponse<Produkter>();
             var produkter = produkters.FirstOrDefault(p => p.ProduktID == produktID);
-            if (produkter is not null)
-            return produkter;
-
-            throw new Exception("Ingen produkt hittades");
+            serviceResponse.Data = produkter;
+            return serviceResponse;
         }
     }
 }
