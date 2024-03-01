@@ -1,6 +1,7 @@
 global using eskitech.Models;
 global using eskitech.Models.Services.ProduktService;
 global using eskitech.Models.Services.ProduktService.DTOs.Produkte;
+global using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
