@@ -21,12 +21,12 @@ namespace eskitech.Controllers
 
 
         [HttpGet("GetAll")]
-        public async Task<ActionResult<ServiceResponse<List<Produkter>>>> Get()
+        public async Task<ActionResult<ServiceResponse<List<GetProduktDto>>>> Get()
         {
             return Ok(await _produktService.GetAllProdukters());
         }
         [HttpGet("{produktID}")]
-        public async Task<ActionResult<ServiceResponse<List<Produkter>>>> GetSingle(int produktID)
+        public async Task<ActionResult<ServiceResponse<List<GetProduktDto>>>> GetSingle(int produktID)
         {
             return Ok(await _produktService.GetProduktersByID(produktID));
         }

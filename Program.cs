@@ -1,5 +1,6 @@
 global using eskitech.Models;
 global using eskitech.Models.Services.ProduktService;
+global using eskitech.Models.Services.ProduktService.DTOs.Produkte;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<IProduktService, ProduktService>();
 
 var app = builder.Build();
