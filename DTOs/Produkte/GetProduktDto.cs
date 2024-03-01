@@ -9,7 +9,6 @@ namespace eskitech.Models.Services.ProduktService.DTOs.Produkte
     {
         public int ProduktID { get; set; } = 0;
         public string Namn { get; set; } = "Namn";
-        public string Storlek { get; set; } = "Storlek";
         public int LagerSaldo { get; set; } = 0;
         public int Pris { get; set; } = 0;
 

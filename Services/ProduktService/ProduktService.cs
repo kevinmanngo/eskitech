@@ -10,8 +10,11 @@ namespace eskitech.Models.Services.ProduktService
     public class ProduktService : IProduktService
     {
         private static List<Produkter> produkters = new List<Produkter>{
-            new Produkter(),
-            new Produkter {ProduktID = 1, Namn = "Stav X2000", Kategori = EskiClass.Stavar, LagerSaldo = 50, Pris = 999, Storlek = "Barn 9-12"}
+            new Produkter {ProduktID = 1, Namn = "Stav X2000", Kategori = EskiClass.Stavar, LagerSaldo = 50, Pris = 200},
+            new Produkter {ProduktID = 2, Namn = "Goggles", Kategori = EskiClass.Goggles, LagerSaldo = 12, Pris = 899},
+            new Produkter {ProduktID = 3, Namn = "Twintip", Kategori = EskiClass.Skidor, LagerSaldo = 40, Pris = 999},
+            new Produkter {ProduktID = 4, Namn = "Pjäxa", Kategori = EskiClass.Pjaxor, LagerSaldo = 2, Pris = 4500},
+            new Produkter {ProduktID = 5, Namn = "Blades", Kategori = EskiClass.Skidor, LagerSaldo = 13, Pris = 79}
         };
         private readonly IMapper _mapper;
 
