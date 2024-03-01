@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,6 +8,7 @@ namespace eskitech.Models
 {
     public class Produkter
     {
+        [Key]
         public int ProduktID { get; set; } = 0;
         public string Namn { get; set; } = "Namn";
         public string Storlek { get; set; } = "Storlek";

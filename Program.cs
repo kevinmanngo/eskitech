@@ -2,11 +2,13 @@ global using eskitech.Models;
 global using eskitech.Models.Services.ProduktService;
 global using eskitech.Models.Services.ProduktService.DTOs.Produkte;
 global using Microsoft.EntityFrameworkCore;
+global using eskitech.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddDbContext<DataContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
