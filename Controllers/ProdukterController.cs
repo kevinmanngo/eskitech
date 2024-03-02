@@ -30,5 +30,11 @@ namespace eskitech.Controllers
         {
             return Ok(await _produktService.GetProduktersByID(produktID));
         }
+        
+        [HttpGet("GetSortedByPrice")]
+        public async Task<ActionResult<ServiceResponse<List<GetProduktDto>>>> GetSortedByPrice()
+        {
+            return Ok(await _produktService.GetSortedProduktersByPrice());
+        }
     }
 }

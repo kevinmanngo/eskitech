@@ -10,6 +10,7 @@ namespace eskitech.Models.Services.ProduktService
     {
         Task<ServiceResponse<List<GetProduktDto>>> GetAllProdukters();
         Task<ServiceResponse<GetProduktDto>> GetProduktersByID (int produktID);
+        Task<ServiceResponse<List<GetProduktDto>>> GetSortedProduktersByPrice();
         
     }
 }

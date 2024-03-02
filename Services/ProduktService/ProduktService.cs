@@ -36,5 +36,12 @@ namespace eskitech.Models.Services.ProduktService
             serviceResponse.Data = _mapper.Map<GetProduktDto>(produkter);
             return serviceResponse;
         }
+        public async Task<ServiceResponse<List<GetProduktDto>>> GetSortedProduktersByPrice()
+        {
+            var serviceResponse = new ServiceResponse<List<GetProduktDto>>();
+            var sortedProdukts = produkters.OrderBy(p => p.Pris).Select(p => _mapper.Map<GetProduktDto>(p)).ToList();
+            serviceResponse.Data = sortedProdukts;
+            return serviceResponse;
+        }
     }
 }
